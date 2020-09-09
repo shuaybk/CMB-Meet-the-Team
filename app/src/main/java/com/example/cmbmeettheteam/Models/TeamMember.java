@@ -1,6 +1,9 @@
 package com.example.cmbmeettheteam.Models;
 
 public class TeamMember {
+
+    private final String TAG = this.getClass().getSimpleName();
+
     private String id;
     private String name;
     private String position;
