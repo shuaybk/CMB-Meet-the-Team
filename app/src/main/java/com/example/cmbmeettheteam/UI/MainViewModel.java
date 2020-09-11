@@ -1,10 +1,11 @@
-package com.example.cmbmeettheteam;
+package com.example.cmbmeettheteam.UI;
 
 import android.content.Context;
 
 import androidx.lifecycle.ViewModel;
 
 import com.example.cmbmeettheteam.Models.TeamMember;
+import com.example.cmbmeettheteam.R;
 import com.example.cmbmeettheteam.Utils.DataUtils;
 import com.example.cmbmeettheteam.Utils.JsonUtils;
 
@@ -14,7 +15,7 @@ public class MainViewModel extends ViewModel {
 
     private final String TAG = this.getClass().getSimpleName();
 
-    ArrayList<TeamMember> teamMembers;
+    private ArrayList<TeamMember> teamMembers;
 
     public ArrayList<TeamMember> getTeamInfo(Context context) {
         if (teamMembers == null) {
