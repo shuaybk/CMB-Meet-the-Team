@@ -13,11 +13,10 @@ public class DataUtils {
 
     private static final String TAG = "DataUtils";
 
-    public static String getRawData(Context context) {
+    public static String getRawData(InputStream inputStream) {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            InputStream inputStream = context.getResources().openRawResource(R.raw.team); //TO DO: Get the inputstream from Raw folder
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line = bufferedReader.readLine();
             while (line != null) {
