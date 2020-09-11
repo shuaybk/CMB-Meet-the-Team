@@ -1,9 +1,6 @@
-package com.example.cmbmeettheteam.Utils;
+package com.example.cmbmeettheteam.Data;
 
-import android.content.Context;
 import android.util.Log;
-
-import com.example.cmbmeettheteam.R;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.cmbmeettheteam.Models.TeamMember;
 import com.example.cmbmeettheteam.R;
-import com.example.cmbmeettheteam.Utils.DataUtils;
-import com.example.cmbmeettheteam.Utils.JsonUtils;
+import com.example.cmbmeettheteam.Data.DataUtils;
+import com.example.cmbmeettheteam.Data.JsonUtils;
 
 import java.util.ArrayList;
 
