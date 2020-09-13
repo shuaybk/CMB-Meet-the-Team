@@ -20,6 +20,7 @@ public class JsonUtils {
     private static final String JSON_TEAMMEMBER_INTERESTS_KEY = "interests";
     private static final String JSON_TEAMMEMBER_DATING_PREFS_KEY = "dating_preferences";
 
+
     public static ArrayList<TeamMember> jsonToTeamList(String json) {
         ArrayList<TeamMember> team = new ArrayList<>();
 

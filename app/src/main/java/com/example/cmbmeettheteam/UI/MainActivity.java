@@ -11,6 +11,7 @@ import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 import com.example.cmbmeettheteam.Data.DataUtils;
+import com.example.cmbmeettheteam.Data.JsonUtils;
 import com.example.cmbmeettheteam.Models.TeamMember;
 import com.example.cmbmeettheteam.R;
 import com.example.cmbmeettheteam.databinding.ActivityMainBinding;
@@ -50,5 +51,6 @@ public class MainActivity extends AppCompatActivity implements TeamRecyclerViewA
     public void onTeamMemberItemClick(TeamMember teamMember) {
         Intent intent = new Intent(this, MemberDetailsActivity.class);
         intent.putExtra(DataUtils.INTENT_EXTRA_TEAM_MEMBER, teamMember);
+        startActivity(intent);
     }
 }
