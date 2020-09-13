@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UI.MemberDetailsActivity">
+
+        <ImageView
+            android:id="@+id/member_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/position_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/member_image"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/PositionTextOverImageStyle"/>
+
+        <TextView
+            android:id="@+id/personality_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/personality_label"
+            app:layout_constraintTop_toBottomOf="@id/member_image"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/LabelTextStyle"/>
+
+        <TextView
+            android:id="@+id/personality_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/personality_label_text"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/BodyTextStyle"/>
+
+        <TextView
+            android:id="@+id/interests_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/interests_label"
+            app:layout_constraintTop_toBottomOf="@+id/personality_text"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/LabelTextStyle"/>
+
+        <TextView
+            android:id="@+id/interests_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/interests_label_text"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/BodyTextStyle"/>
+
+        <TextView
+            android:id="@+id/dating_prefs_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dating_prefs_label"
+            app:layout_constraintTop_toBottomOf="@+id/interests_text"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/LabelTextStyle"/>
+
+        <TextView
+            android:id="@+id/dating_prefs_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/dating_prefs_label_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingBottom="30dp"
+            style="@style/BodyTextStyle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

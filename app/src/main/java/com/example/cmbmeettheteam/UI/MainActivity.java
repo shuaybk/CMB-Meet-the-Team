@@ -5,13 +5,17 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.widget.Toast;
 
+import com.example.cmbmeettheteam.Data.DataUtils;
+import com.example.cmbmeettheteam.Models.TeamMember;
 import com.example.cmbmeettheteam.R;
 import com.example.cmbmeettheteam.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TeamRecyclerViewAdapter.TeamMemberItemClickListener {
 
     private final String TAG = this.getClass().getSimpleName();
     private final int NUM_COLUMNS = 2;
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mData = new ViewModelProvider(this).get(MainViewModel.class);
 
         int imageWidth = screenWidth/NUM_COLUMNS;
-        teamAdapter = new TeamRecyclerViewAdapter(mData.getTeamInfo(this), imageWidth);
+        teamAdapter = new TeamRecyclerViewAdapter(mData.getTeamInfo(this), imageWidth, this);
         mBinding.teamRecyclerView.setAdapter(teamAdapter);
         mBinding.teamRecyclerView.setLayoutManager(new GridLayoutManager(this, NUM_COLUMNS));
     }
@@ -40,5 +44,11 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         screenWidth = displayMetrics.widthPixels;
+    }
+
+    @Override
+    public void onTeamMemberItemClick(TeamMember teamMember) {
+        Intent intent = new Intent(this, MemberDetailsActivity.class);
+        intent.putExtra(DataUtils.INTENT_EXTRA_TEAM_MEMBER, teamMember);
     }
 }

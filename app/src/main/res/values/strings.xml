@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CMB Meet the Team</string>
     <string name="member_pic_description">This is a picture of the team member</string>
+    <string name="personality_label">Personality</string>
+    <string name="interests_label">Interest</string>
+    <string name="dating_prefs_label">Dating Preferences</string>
 </resources>

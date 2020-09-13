@@ -8,4 +8,32 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NameTextOverImageStyle" parent="AppTheme">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+    </style>
+
+    <style name="PositionTextOverImageStyle" parent="AppTheme">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+    </style>
+
+    <style name="LabelTextStyle" parent="AppTheme">
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingStart">10dp</item>
+    </style>
+
+    <style name="BodyTextStyle" parent="AppTheme">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingStart">10dp</item>
+    </style>
+
+
 </resources>

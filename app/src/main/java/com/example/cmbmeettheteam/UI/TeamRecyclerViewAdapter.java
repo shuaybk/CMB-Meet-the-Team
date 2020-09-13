@@ -22,9 +22,16 @@ public class TeamRecyclerViewAdapter extends RecyclerView.Adapter<TeamRecyclerVi
     private ArrayList<TeamMember> teamMembers;
     private int imageWidth;
 
-    public TeamRecyclerViewAdapter(ArrayList<TeamMember> teamMembers, int imageWidth) {
+    private TeamMemberItemClickListener teamMemberItemClickListener;
+
+    public interface TeamMemberItemClickListener {
+        void onTeamMemberItemClick(TeamMember teamMember);
+    }
+
+    public TeamRecyclerViewAdapter(ArrayList<TeamMember> teamMembers, int imageWidth, TeamMemberItemClickListener teamMemberItemClickListener) {
         this.teamMembers = teamMembers;
         this.imageWidth = imageWidth;
+        this.teamMemberItemClickListener = teamMemberItemClickListener;
     }
 
     @NonNull
@@ -52,7 +59,7 @@ public class TeamRecyclerViewAdapter extends RecyclerView.Adapter<TeamRecyclerVi
         return teamMembers.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView teamMemberName;
         TextView teamMemberPosition;
@@ -63,6 +70,13 @@ public class TeamRecyclerViewAdapter extends RecyclerView.Adapter<TeamRecyclerVi
             teamMemberName = itemView.findViewById(R.id.member_name_text);
             teamMemberPosition = itemView.findViewById(R.id.member_position_text);
             teamMemberPic = itemView.findViewById(R.id.member_image);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            teamMemberItemClickListener.onTeamMemberItemClick(teamMembers.get(getAdapterPosition()));
         }
     }
 }

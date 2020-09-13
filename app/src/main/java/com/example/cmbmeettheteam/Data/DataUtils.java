@@ -10,6 +10,8 @@ public class DataUtils {
 
     private static final String TAG = "DataUtils";
 
+    public static final String INTENT_EXTRA_TEAM_MEMBER = "TeamMember";
+
     public static String getRawData(InputStream inputStream) {
         StringBuilder stringBuilder = new StringBuilder();
 

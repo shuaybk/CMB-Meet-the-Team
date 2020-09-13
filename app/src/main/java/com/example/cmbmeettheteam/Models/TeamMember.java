@@ -1,8 +1,11 @@
 package com.example.cmbmeettheteam.Models;
 
-public class TeamMember {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private final String TAG = this.getClass().getSimpleName();
+public class TeamMember implements Parcelable {
+
+    private static final String TAG = "TeamMember";
 
     private String id;
     private String name;
@@ -24,6 +27,28 @@ public class TeamMember {
         this.interests = interests;
         this.datingPrefs = datingPrefs;
     }
+
+    protected TeamMember(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        position = in.readString();
+        imageLink = in.readString();
+        personality = in.readString();
+        interests = in.readString();
+        datingPrefs = in.readString();
+    }
+
+    public static final Creator<TeamMember> CREATOR = new Creator<TeamMember>() {
+        @Override
+        public TeamMember createFromParcel(Parcel in) {
+            return new TeamMember(in);
+        }
+
+        @Override
+        public TeamMember[] newArray(int size) {
+            return new TeamMember[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -79,5 +104,21 @@ public class TeamMember {
 
     public void setDatingPrefs(String datingPrefs) {
         this.datingPrefs = datingPrefs;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeString(position);
+        dest.writeString(imageLink);
+        dest.writeString(personality);
+        dest.writeString(interests);
+        dest.writeString(datingPrefs);
     }
 }
